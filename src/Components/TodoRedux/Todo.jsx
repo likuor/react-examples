@@ -18,6 +18,9 @@ export default function Todo() {
   const { list, isLoading, isError, message } = useSelector(
     (state) => state.todo
   );
+  const userEmail = useSelector((state) => state.user.info.email);
+  console.log(userEmail);
+
   const dispatch = useDispatch();
   const inputRef = useRef();
   const handleSubmit = (event) => {
@@ -48,21 +51,27 @@ export default function Todo() {
       <h1>Todo List</h1>
       <Signup />
       <SignIn />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='taskInput'>New Task:</label>
-        <input type='text' ref={inputRef} />
-        <button>Submit</button>
-      </form>
-      <ul>
-        {list.map((task) => (
-          <li key={task.id}>
-            <button onClick={() => dispatch(removeFromFirebase(task.id))}>
-              X
-            </button>
-            {task.title}
-          </li>
-        ))}
-      </ul>
+      {userEmail !== '' ? (
+        <>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor='taskInput'>New Task:</label>
+            <input type='text' ref={inputRef} />
+            <button>Submit</button>
+          </form>
+          <ul>
+            {list.map((task) => (
+              <li key={task.id}>
+                <button onClick={() => dispatch(removeFromFirebase(task.id))}>
+                  X
+                </button>
+                {task.title}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        ''
+      )}
     </div>
   );
 }

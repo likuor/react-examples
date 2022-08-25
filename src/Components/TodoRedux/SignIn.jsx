@@ -1,9 +1,11 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signIn, signOut, signInGoogle } from './features/user/userSlice';
 
 export default function Signup() {
+  const userEmail = useSelector((state) => state.user.info.email);
+
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const dispatch = useDispatch();
@@ -37,6 +39,8 @@ export default function Signup() {
       <button onClick={() => dispatch(signInGoogle())}>
         Sign in with Google
       </button>
+      {userEmail !== '' ? <p>{userEmail}</p> : ''}
+
       <div>
         <button onClick={() => dispatch(signOut())}>Sign out!</button>
       </div>

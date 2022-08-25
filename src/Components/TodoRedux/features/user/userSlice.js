@@ -30,14 +30,14 @@ const userSlice = createSlice({
         state.info.email = action.payload.user.email;
       })
       .addCase(signIn.fulfilled, (state, action) => {
-        console.log(action.payload.user.email);
+        // console.log('log', action.payload.user.email);
         state.info.email = action.payload.user.email;
       })
       .addCase(signOut.fulfilled, (state, action) => {
         state.info.email = '';
       })
       .addCase(signInGoogle.fulfilled, (state, action) => {
-        console.log(action.payload.user);
+        console.log('log', action.payload.user);
         state.info.email = action.payload.user.email;
       });
   },

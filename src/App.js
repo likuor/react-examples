@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import './App.css';
-import BlogPosts from './Components/BlogPosts/BlogPosts';
+// import BlogPosts from './Components/BlogPosts/BlogPosts';
 // import CustomHook from './Components/CustomHook/CustomHook';
 // import Quiz from './Components/Quiz/Quiz';
 // import Class from './Components/Class/Class';

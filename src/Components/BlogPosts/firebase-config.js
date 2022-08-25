@@ -7,14 +7,13 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCuZe1oECsAuV9rlIvVba8gzRx12WnnZ-A',
-  authDomain: 'blog-posts-example-9cef4.firebaseapp.com',
-  projectId: 'blog-posts-example-9cef4',
-  storageBucket: 'blog-posts-example-9cef4.appspot.com',
-  messagingSenderId: '793946168585',
-  appId: '1:793946168585:web:ce346320fe65e84b0e47d8',
+  apiKey: 'AIzaSyAf0DuYBAgnkzx84wziRJ_2Ij674mzcZO0',
+  authDomain: 'blog-post-7bbcc.firebaseapp.com',
+  projectId: 'blog-post-7bbcc',
+  storageBucket: 'blog-post-7bbcc.appspot.com',
+  messagingSenderId: '363063501993',
+  appId: '1:363063501993:web:ad0ce36f75698d165b35b8',
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

@@ -11,7 +11,7 @@ export default function Signup() {
     const email = emailInputRef.current.value;
     const password = passwordInputRef.current.value;
     const newUser = { email, password };
-    console.log(password);
+    console.log('here', password);
     dispatch(signUp(newUser));
   };
   //   useEffect(() => {
